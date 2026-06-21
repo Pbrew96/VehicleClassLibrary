@@ -141,15 +141,15 @@ namespace VehicleClassLibrary.Tests
             store.AddVehicleToCart(car2.Id);
 
             //Act: Perform the checkout operation
-            //decimal total = store.Checkout();
+            decimal total = store.Checkout();
 
             // Retrive the shopping cart contents after checkout
             List<VehicleModel> cartAfterCheckout = store.GetShoppingCart();
 
             // Assert: Verify that the total is approximately correct
             // (Allowing small variance for business logic such as discounts, taxes, etc.)
-            //Assert.True(total >= (car1.Price + car2.Price) * 0.95m);
-           // Assert.True(total <= (car1.Price + car2.Price) * 1.05m);
+            Assert.True(total >= (car1.Price + car2.Price) * 0.95m);
+            Assert.True(total <= (car1.Price + car2.Price) * 1.05m);
 
             // Assert: Verify that the shopping cart is now empty after checkout
             Assert.Empty(cartAfterCheckout);

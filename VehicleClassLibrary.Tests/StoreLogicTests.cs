@@ -1,4 +1,12 @@
-﻿using Microsoft.VisualBasic;
+﻿/*
+ * Patrick Brewster
+ * CST - 250
+ * 06/20/2026
+ * Vehicle Class Library
+ * Activity 1
+ */
+
+using Microsoft.VisualBasic;
 using VehicleClassLibrary.Models;
 using VehicleClassLibrary.Services.DataAccessLayer;
 using Xunit;

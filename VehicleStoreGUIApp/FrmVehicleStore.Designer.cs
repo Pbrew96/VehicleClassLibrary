@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            lblColorError = new Label();
+            txtColor = new TextBox();
+            label9 = new Label();
             lblWheelsError = new Label();
             lblPriceError = new Label();
             lblYearError = new Label();
@@ -36,12 +39,16 @@
             lblMakeError = new Label();
             lblVehicleTypeError = new Label();
             groupBox2 = new GroupBox();
+            lblIsNewError = new Label();
+            rdoIsNewNo = new RadioButton();
+            rdoIsNewYes = new RadioButton();
+            label6 = new Label();
             lblSpecialtyDecimalError = new Label();
             lblSpecialtyBooleanError = new Label();
             rdoSpecialtyNo = new RadioButton();
             rdoSpecialtyYes = new RadioButton();
-            txtSpecialty = new TextBox();
-            this.lblSpecialtyDecimal = new Label();
+            txtSpecialtyDecimal = new TextBox();
+            lblSpecialtyDecimal = new Label();
             lblSpecialtyBoolean = new Label();
             btnCreate = new Button();
             txtWheels = new TextBox();
@@ -74,6 +81,9 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblColorError);
+            groupBox1.Controls.Add(txtColor);
+            groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(lblWheelsError);
             groupBox1.Controls.Add(lblPriceError);
             groupBox1.Controls.Add(lblYearError);
@@ -98,10 +108,37 @@
             groupBox1.Controls.Add(rdoCar);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(267, 511);
+            groupBox1.Size = new Size(312, 511);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Create a Vehicle";
+            // 
+            // lblColorError
+            // 
+            lblColorError.AutoSize = true;
+            lblColorError.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblColorError.ForeColor = Color.Red;
+            lblColorError.Location = new Point(73, 327);
+            lblColorError.Name = "lblColorError";
+            lblColorError.Size = new Size(186, 15);
+            lblColorError.TabIndex = 23;
+            lblColorError.Text = "Please enter a valid wheel count";
+            // 
+            // txtColor
+            // 
+            txtColor.Location = new Point(73, 301);
+            txtColor.Name = "txtColor";
+            txtColor.Size = new Size(100, 23);
+            txtColor.TabIndex = 22;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(19, 309);
+            label9.Name = "label9";
+            label9.Size = new Size(42, 15);
+            label9.TabIndex = 21;
+            label9.Text = "Color: ";
             // 
             // lblWheelsError
             // 
@@ -171,19 +208,65 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(lblIsNewError);
+            groupBox2.Controls.Add(rdoIsNewNo);
+            groupBox2.Controls.Add(rdoIsNewYes);
+            groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(lblSpecialtyDecimalError);
             groupBox2.Controls.Add(lblSpecialtyBooleanError);
             groupBox2.Controls.Add(rdoSpecialtyNo);
             groupBox2.Controls.Add(rdoSpecialtyYes);
-            groupBox2.Controls.Add(txtSpecialty);
-            groupBox2.Controls.Add(this.lblSpecialtyDecimal);
+            groupBox2.Controls.Add(txtSpecialtyDecimal);
+            groupBox2.Controls.Add(lblSpecialtyDecimal);
             groupBox2.Controls.Add(lblSpecialtyBoolean);
-            groupBox2.Location = new Point(6, 335);
+            groupBox2.Location = new Point(6, 367);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(227, 138);
+            groupBox2.Size = new Size(300, 138);
             groupBox2.TabIndex = 15;
             groupBox2.TabStop = false;
             groupBox2.Text = "Specialty Properties";
+            // 
+            // lblIsNewError
+            // 
+            lblIsNewError.AutoSize = true;
+            lblIsNewError.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIsNewError.ForeColor = Color.Red;
+            lblIsNewError.Location = new Point(145, 66);
+            lblIsNewError.Name = "lblIsNewError";
+            lblIsNewError.Size = new Size(133, 15);
+            lblIsNewError.TabIndex = 26;
+            lblIsNewError.Text = "Please select Yes or No";
+            // 
+            // rdoIsNewNo
+            // 
+            rdoIsNewNo.AutoSize = true;
+            rdoIsNewNo.Location = new Point(219, 44);
+            rdoIsNewNo.Name = "rdoIsNewNo";
+            rdoIsNewNo.Size = new Size(41, 19);
+            rdoIsNewNo.TabIndex = 25;
+            rdoIsNewNo.TabStop = true;
+            rdoIsNewNo.Text = "No";
+            rdoIsNewNo.UseVisualStyleBackColor = true;
+            // 
+            // rdoIsNewYes
+            // 
+            rdoIsNewYes.AutoSize = true;
+            rdoIsNewYes.Location = new Point(158, 44);
+            rdoIsNewYes.Name = "rdoIsNewYes";
+            rdoIsNewYes.Size = new Size(42, 19);
+            rdoIsNewYes.TabIndex = 24;
+            rdoIsNewYes.TabStop = true;
+            rdoIsNewYes.Text = "Yes";
+            rdoIsNewYes.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(182, 26);
+            label6.Name = "label6";
+            label6.Size = new Size(47, 15);
+            label6.TabIndex = 23;
+            label6.Text = "Is New?";
             // 
             // lblSpecialtyDecimalError
             // 
@@ -229,21 +312,21 @@
             rdoSpecialtyYes.Text = "Yes";
             rdoSpecialtyYes.UseVisualStyleBackColor = true;
             // 
-            // txtSpecialty
+            // txtSpecialtyDecimal
             // 
-            txtSpecialty.Location = new Point(116, 88);
-            txtSpecialty.Name = "txtSpecialty";
-            txtSpecialty.Size = new Size(100, 23);
-            txtSpecialty.TabIndex = 2;
+            txtSpecialtyDecimal.Location = new Point(138, 88);
+            txtSpecialtyDecimal.Name = "txtSpecialtyDecimal";
+            txtSpecialtyDecimal.Size = new Size(100, 23);
+            txtSpecialtyDecimal.TabIndex = 2;
             // 
             // lblSpecialtyDecimal
             // 
-            this.lblSpecialtyDecimal.AutoSize = true;
-            this.lblSpecialtyDecimal.Location = new Point(11, 96);
-            this.lblSpecialtyDecimal.Name = "lblSpecialtyDecimal";
-            this.lblSpecialtyDecimal.Size = new Size(103, 15);
-            this.lblSpecialtyDecimal.TabIndex = 1;
-            this.lblSpecialtyDecimal.Text = "Specialty Decimal:";
+            lblSpecialtyDecimal.AutoSize = true;
+            lblSpecialtyDecimal.Location = new Point(11, 96);
+            lblSpecialtyDecimal.Name = "lblSpecialtyDecimal";
+            lblSpecialtyDecimal.Size = new Size(103, 15);
+            lblSpecialtyDecimal.TabIndex = 1;
+            lblSpecialtyDecimal.Text = "Specialty Decimal:";
             // 
             // lblSpecialtyBoolean
             // 
@@ -256,12 +339,13 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(29, 306);
+            btnCreate.Location = new Point(131, 345);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(75, 23);
             btnCreate.TabIndex = 14;
             btnCreate.Text = "Create";
             btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += BtnCreateClickEH;
             // 
             // txtWheels
             // 
@@ -394,7 +478,7 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(lstInventory);
-            groupBox3.Location = new Point(285, 12);
+            groupBox3.Location = new Point(330, 12);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(219, 393);
             groupBox3.TabIndex = 1;
@@ -411,7 +495,7 @@
             // 
             // btnAddToCart
             // 
-            btnAddToCart.Location = new Point(504, 150);
+            btnAddToCart.Location = new Point(549, 150);
             btnAddToCart.Name = "btnAddToCart";
             btnAddToCart.Size = new Size(75, 44);
             btnAddToCart.TabIndex = 2;
@@ -421,7 +505,7 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(lstShoppingCart);
-            groupBox4.Location = new Point(588, 12);
+            groupBox4.Location = new Point(633, 12);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(200, 393);
             groupBox4.TabIndex = 3;
@@ -467,7 +551,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 535);
+            ClientSize = new Size(930, 635);
             Controls.Add(lblTotal);
             Controls.Add(label8);
             Controls.Add(btnCheckout);
@@ -508,7 +592,7 @@
         private GroupBox groupBox2;
         private RadioButton rdoSpecialtyNo;
         private RadioButton rdoSpecialtyYes;
-        private TextBox txtSpecialty;
+        private TextBox txtSpecialtyDecimal;
         private Label label7;
         private Label lblSpecialtyBoolean;
         private Label lblSpecialtyDecimal;
@@ -526,8 +610,15 @@
         private Label lblYearError;
         private Label lblModelError;
         private Label lblMakeError;
+        private Label lblColorError;
         private Label label10;
         private Label lblSpecialtyBooleanError;
         private Label lblSpecialtyDecimalError;
+        private RadioButton rdoIsNewNo;
+        private RadioButton rdoIsNewYes;
+        private Label label6;
+        private TextBox txtColor;
+        private Label label9;
+        private Label lblIsNewError;
     }
 }

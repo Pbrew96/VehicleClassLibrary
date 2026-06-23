@@ -35,6 +35,8 @@ namespace VehicleStoreGUIApp
             lblWheelsError.Visible = false;
             lblSpecialtyBooleanError.Visible = false;
             lblSpecialtyDecimalError.Visible = false;
+            lblColorError.Visible = false;
+            lblIsNewError.Visible = false;
             // Initialize the store logic variable
             _storeLogic = new StoreLogic();
             // Initialize the binding source variables
@@ -568,6 +570,15 @@ namespace VehicleStoreGUIApp
             lblTotal.Text = total.ToString("C");
             // Reset the bindings for the shopping cart binding source
             _shoppingCartBindingSource.ResetBindings(false);
+        }
+        private void BtnRemoveFromCartClickEH(object sender, EventArgs e)
+        {
+            if (lstShoppingCart.SelectedItem is VehicleModel vehicle)
+            {
+                _storeLogic.RemoveVehicleFromCart(vehicle.Id);
+
+                _shoppingCartBindingSource.ResetBindings(false);
+            }
         }
     }
 }

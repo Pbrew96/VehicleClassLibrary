@@ -95,5 +95,9 @@ namespace VehicleClassLibrary.Services.BusinessLogicLayer
             // Call and return the checkout method in the DAO
             return _storeDAO.Checkout();
         }
+        public int RemoveVehicleFromCart(int vehicleId)
+        {
+            return _storeDAO.RemoveVehicleFromCart(vehicleId);
+        }
     }
 }

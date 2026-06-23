@@ -395,5 +395,18 @@ namespace VehicleClassLibrary.Services.DataAccessLayer
             // Return the carts total
             return total;
         }
+        public int RemoveVehicleFromCart(int vehicleId)
+        {
+            for (int i = 0; i < _shoppingCart.Count; i++)
+            {
+                if (_shoppingCart[i].Id == vehicleId)
+                {
+                    _shoppingCart.RemoveAt(i);
+                    break;
+                }
+            }
+
+            return _shoppingCart.Count;
+        }
     }
 }

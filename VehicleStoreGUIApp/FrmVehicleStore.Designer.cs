@@ -39,10 +39,6 @@
             lblMakeError = new Label();
             lblVehicleTypeError = new Label();
             groupBox2 = new GroupBox();
-            lblIsNewError = new Label();
-            rdoIsNewNo = new RadioButton();
-            rdoIsNewYes = new RadioButton();
-            label6 = new Label();
             lblSpecialtyDecimalError = new Label();
             lblSpecialtyBooleanError = new Label();
             rdoSpecialtyNo = new RadioButton();
@@ -65,6 +61,10 @@
             rdoPickup = new RadioButton();
             rdoMotorcycle = new RadioButton();
             rdoCar = new RadioButton();
+            lblIsNewError = new Label();
+            rdoIsNewNo = new RadioButton();
+            rdoIsNewYes = new RadioButton();
+            label6 = new Label();
             groupBox3 = new GroupBox();
             lstInventory = new ListBox();
             btnAddToCart = new Button();
@@ -73,10 +73,13 @@
             btnCheckout = new Button();
             label8 = new Label();
             lblTotal = new Label();
+            btnRemoveFromCart = new Button();
+            grpIsNew = new GroupBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
+            grpIsNew.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -91,7 +94,6 @@
             groupBox1.Controls.Add(lblMakeError);
             groupBox1.Controls.Add(lblVehicleTypeError);
             groupBox1.Controls.Add(groupBox2);
-            groupBox1.Controls.Add(btnCreate);
             groupBox1.Controls.Add(txtWheels);
             groupBox1.Controls.Add(txtPrice);
             groupBox1.Controls.Add(txtYear);
@@ -109,7 +111,7 @@
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(312, 511);
-            groupBox1.TabIndex = 0;
+            groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Create a Vehicle";
             // 
@@ -129,7 +131,7 @@
             txtColor.Location = new Point(73, 301);
             txtColor.Name = "txtColor";
             txtColor.Size = new Size(100, 23);
-            txtColor.TabIndex = 22;
+            txtColor.TabIndex = 14;
             // 
             // label9
             // 
@@ -137,7 +139,7 @@
             label9.Location = new Point(19, 309);
             label9.Name = "label9";
             label9.Size = new Size(42, 15);
-            label9.TabIndex = 21;
+            label9.TabIndex = 8;
             label9.Text = "Color: ";
             // 
             // lblWheelsError
@@ -148,7 +150,7 @@
             lblWheelsError.Location = new Point(72, 283);
             lblWheelsError.Name = "lblWheelsError";
             lblWheelsError.Size = new Size(186, 15);
-            lblWheelsError.TabIndex = 20;
+            lblWheelsError.TabIndex = 0;
             lblWheelsError.Text = "Please enter a valid wheel count";
             // 
             // lblPriceError
@@ -208,10 +210,6 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(lblIsNewError);
-            groupBox2.Controls.Add(rdoIsNewNo);
-            groupBox2.Controls.Add(rdoIsNewYes);
-            groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(lblSpecialtyDecimalError);
             groupBox2.Controls.Add(lblSpecialtyBooleanError);
             groupBox2.Controls.Add(rdoSpecialtyNo);
@@ -222,51 +220,9 @@
             groupBox2.Location = new Point(6, 367);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(300, 138);
-            groupBox2.TabIndex = 15;
+            groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
             groupBox2.Text = "Specialty Properties";
-            // 
-            // lblIsNewError
-            // 
-            lblIsNewError.AutoSize = true;
-            lblIsNewError.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblIsNewError.ForeColor = Color.Red;
-            lblIsNewError.Location = new Point(145, 66);
-            lblIsNewError.Name = "lblIsNewError";
-            lblIsNewError.Size = new Size(133, 15);
-            lblIsNewError.TabIndex = 26;
-            lblIsNewError.Text = "Please select Yes or No";
-            // 
-            // rdoIsNewNo
-            // 
-            rdoIsNewNo.AutoSize = true;
-            rdoIsNewNo.Location = new Point(219, 44);
-            rdoIsNewNo.Name = "rdoIsNewNo";
-            rdoIsNewNo.Size = new Size(41, 19);
-            rdoIsNewNo.TabIndex = 25;
-            rdoIsNewNo.TabStop = true;
-            rdoIsNewNo.Text = "No";
-            rdoIsNewNo.UseVisualStyleBackColor = true;
-            // 
-            // rdoIsNewYes
-            // 
-            rdoIsNewYes.AutoSize = true;
-            rdoIsNewYes.Location = new Point(158, 44);
-            rdoIsNewYes.Name = "rdoIsNewYes";
-            rdoIsNewYes.Size = new Size(42, 19);
-            rdoIsNewYes.TabIndex = 24;
-            rdoIsNewYes.TabStop = true;
-            rdoIsNewYes.Text = "Yes";
-            rdoIsNewYes.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(182, 26);
-            label6.Name = "label6";
-            label6.Size = new Size(47, 15);
-            label6.TabIndex = 23;
-            label6.Text = "Is New?";
             // 
             // lblSpecialtyDecimalError
             // 
@@ -296,7 +252,7 @@
             rdoSpecialtyNo.Location = new Point(72, 44);
             rdoSpecialtyNo.Name = "rdoSpecialtyNo";
             rdoSpecialtyNo.Size = new Size(41, 19);
-            rdoSpecialtyNo.TabIndex = 4;
+            rdoSpecialtyNo.TabIndex = 16;
             rdoSpecialtyNo.TabStop = true;
             rdoSpecialtyNo.Text = "No";
             rdoSpecialtyNo.UseVisualStyleBackColor = true;
@@ -307,7 +263,7 @@
             rdoSpecialtyYes.Location = new Point(11, 44);
             rdoSpecialtyYes.Name = "rdoSpecialtyYes";
             rdoSpecialtyYes.Size = new Size(42, 19);
-            rdoSpecialtyYes.TabIndex = 3;
+            rdoSpecialtyYes.TabIndex = 15;
             rdoSpecialtyYes.TabStop = true;
             rdoSpecialtyYes.Text = "Yes";
             rdoSpecialtyYes.UseVisualStyleBackColor = true;
@@ -317,7 +273,7 @@
             txtSpecialtyDecimal.Location = new Point(138, 88);
             txtSpecialtyDecimal.Name = "txtSpecialtyDecimal";
             txtSpecialtyDecimal.Size = new Size(100, 23);
-            txtSpecialtyDecimal.TabIndex = 2;
+            txtSpecialtyDecimal.TabIndex = 17;
             // 
             // lblSpecialtyDecimal
             // 
@@ -339,10 +295,10 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(131, 345);
+            btnCreate.Location = new Point(218, 540);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(75, 23);
-            btnCreate.TabIndex = 14;
+            btnCreate.Size = new Size(92, 63);
+            btnCreate.TabIndex = 20;
             btnCreate.Text = "Create";
             btnCreate.UseVisualStyleBackColor = true;
             btnCreate.Click += BtnCreateClickEH;
@@ -475,12 +431,54 @@
             rdoCar.UseVisualStyleBackColor = true;
             rdoCar.Click += RdoCarClickEH;
             // 
+            // lblIsNewError
+            // 
+            lblIsNewError.AutoSize = true;
+            lblIsNewError.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIsNewError.ForeColor = Color.Red;
+            lblIsNewError.Location = new Point(31, 59);
+            lblIsNewError.Name = "lblIsNewError";
+            lblIsNewError.Size = new Size(133, 15);
+            lblIsNewError.TabIndex = 26;
+            lblIsNewError.Text = "Please select Yes or No";
+            // 
+            // rdoIsNewNo
+            // 
+            rdoIsNewNo.AutoSize = true;
+            rdoIsNewNo.Location = new Point(105, 37);
+            rdoIsNewNo.Name = "rdoIsNewNo";
+            rdoIsNewNo.Size = new Size(41, 19);
+            rdoIsNewNo.TabIndex = 19;
+            rdoIsNewNo.TabStop = true;
+            rdoIsNewNo.Text = "No";
+            rdoIsNewNo.UseVisualStyleBackColor = true;
+            // 
+            // rdoIsNewYes
+            // 
+            rdoIsNewYes.AutoSize = true;
+            rdoIsNewYes.Location = new Point(44, 37);
+            rdoIsNewYes.Name = "rdoIsNewYes";
+            rdoIsNewYes.Size = new Size(42, 19);
+            rdoIsNewYes.TabIndex = 18;
+            rdoIsNewYes.TabStop = true;
+            rdoIsNewYes.Text = "Yes";
+            rdoIsNewYes.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(68, 19);
+            label6.Name = "label6";
+            label6.Size = new Size(47, 15);
+            label6.TabIndex = 23;
+            label6.Text = "Is New?";
+            // 
             // groupBox3
             // 
             groupBox3.Controls.Add(lstInventory);
-            groupBox3.Location = new Point(330, 12);
+            groupBox3.Location = new Point(330, 27);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(219, 393);
+            groupBox3.Size = new Size(461, 393);
             groupBox3.TabIndex = 1;
             groupBox3.TabStop = false;
             groupBox3.Text = "Store Inventory";
@@ -490,14 +488,14 @@
             lstInventory.FormattingEnabled = true;
             lstInventory.Location = new Point(6, 22);
             lstInventory.Name = "lstInventory";
-            lstInventory.Size = new Size(207, 364);
+            lstInventory.Size = new Size(449, 364);
             lstInventory.TabIndex = 0;
             // 
             // btnAddToCart
             // 
-            btnAddToCart.Location = new Point(549, 150);
+            btnAddToCart.Location = new Point(791, 147);
             btnAddToCart.Name = "btnAddToCart";
-            btnAddToCart.Size = new Size(75, 44);
+            btnAddToCart.Size = new Size(81, 44);
             btnAddToCart.TabIndex = 2;
             btnAddToCart.Text = "Add to Cart";
             btnAddToCart.UseVisualStyleBackColor = true;
@@ -506,24 +504,24 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(lstShoppingCart);
-            groupBox4.Location = new Point(633, 12);
+            groupBox4.Location = new Point(872, 27);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(200, 393);
+            groupBox4.Size = new Size(461, 393);
             groupBox4.TabIndex = 3;
             groupBox4.TabStop = false;
-            groupBox4.Text = "Store Inventory";
+            groupBox4.Text = "Shopping Cart";
             // 
             // lstShoppingCart
             // 
             lstShoppingCart.FormattingEnabled = true;
             lstShoppingCart.Location = new Point(6, 22);
             lstShoppingCart.Name = "lstShoppingCart";
-            lstShoppingCart.Size = new Size(188, 364);
+            lstShoppingCart.Size = new Size(449, 364);
             lstShoppingCart.TabIndex = 0;
             // 
             // btnCheckout
             // 
-            btnCheckout.Location = new Point(646, 415);
+            btnCheckout.Location = new Point(790, 430);
             btnCheckout.Name = "btnCheckout";
             btnCheckout.Size = new Size(75, 23);
             btnCheckout.TabIndex = 4;
@@ -534,7 +532,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(644, 450);
+            label8.Location = new Point(788, 465);
             label8.Name = "label8";
             label8.Size = new Size(33, 15);
             label8.TabIndex = 5;
@@ -543,17 +541,42 @@
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(693, 450);
+            lblTotal.Location = new Point(837, 465);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(19, 15);
             lblTotal.TabIndex = 6;
             lblTotal.Text = "$0";
             // 
+            // btnRemoveFromCart
+            // 
+            btnRemoveFromCart.Location = new Point(918, 430);
+            btnRemoveFromCart.Name = "btnRemoveFromCart";
+            btnRemoveFromCart.Size = new Size(117, 23);
+            btnRemoveFromCart.TabIndex = 7;
+            btnRemoveFromCart.Text = "Remove Item";
+            btnRemoveFromCart.UseVisualStyleBackColor = true;
+            btnRemoveFromCart.Click += BtnRemoveFromCartClickEH;
+            // 
+            // grpIsNew
+            // 
+            grpIsNew.Controls.Add(lblIsNewError);
+            grpIsNew.Controls.Add(label6);
+            grpIsNew.Controls.Add(rdoIsNewNo);
+            grpIsNew.Controls.Add(rdoIsNewYes);
+            grpIsNew.Location = new Point(12, 529);
+            grpIsNew.Name = "grpIsNew";
+            grpIsNew.Size = new Size(200, 100);
+            grpIsNew.TabIndex = 8;
+            grpIsNew.TabStop = false;
+            grpIsNew.Text = "Condition";
+            // 
             // FrmVehicleStore
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(930, 635);
+            ClientSize = new Size(1375, 691);
+            Controls.Add(grpIsNew);
+            Controls.Add(btnRemoveFromCart);
             Controls.Add(lblTotal);
             Controls.Add(label8);
             Controls.Add(btnCheckout);
@@ -561,6 +584,7 @@
             Controls.Add(btnAddToCart);
             Controls.Add(groupBox3);
             Controls.Add(groupBox1);
+            Controls.Add(btnCreate);
             Name = "FrmVehicleStore";
             Text = "Vehicle Store";
             groupBox1.ResumeLayout(false);
@@ -569,6 +593,8 @@
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
+            grpIsNew.ResumeLayout(false);
+            grpIsNew.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -622,5 +648,7 @@
         private TextBox txtColor;
         private Label label9;
         private Label lblIsNewError;
+        private Button btnRemoveFromCart;
+        private GroupBox grpIsNew;
     }
 }

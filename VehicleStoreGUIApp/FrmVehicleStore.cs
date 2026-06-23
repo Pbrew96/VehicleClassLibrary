@@ -72,6 +72,8 @@ namespace VehicleStoreGUIApp
             // Show the specialty decimal label and text box
             lblSpecialtyDecimal.Visible = true;
             txtSpecialtyDecimal.Visible = true;
+            // Validate the vehicle type
+            ValidateVehicleType();
 
         }
 
@@ -99,6 +101,8 @@ namespace VehicleStoreGUIApp
             // Show the specialty decimal label and text box
             lblSpecialtyDecimal.Visible = true;
             txtSpecialtyDecimal.Visible = true;
+            // Validate the vehicle type
+            ValidateVehicleType();
         }
 
         /// <summary>
@@ -125,6 +129,8 @@ namespace VehicleStoreGUIApp
             // Show the specialty decimal label and text box
             lblSpecialtyDecimal.Visible = true;
             txtSpecialtyDecimal.Visible = true;
+            // Validate the vehicle type
+            ValidateVehicleType();
         }
 
         /// <summary>
@@ -145,6 +151,18 @@ namespace VehicleStoreGUIApp
             // Hide the specialty decimal label and text box
             lblSpecialtyDecimal.Visible = false;
             txtSpecialtyDecimal.Visible = false;
+            // Validate the vehicle type
+            ValidateVehicleType();
+        }
+        /// <summary>
+        /// Click event handler to validate input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RdoSpecialtyBooleanClickEH(object sender, EventArgs e)
+        {
+            // Validate the specialty boolean
+            ValidateSpecialtyBoolean();
         }
 
         /// <summary>
@@ -509,6 +527,16 @@ namespace VehicleStoreGUIApp
             }
 
             return rdoIsNewYes.Checked;
+        }
+        /// <summary>
+        /// Leave event handler to validate input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtMakeLeaveEH(object sender, EventArgs e)
+        {
+            // Validate the make textbox
+            ValidateTxtMake();
         }
     }
 }
